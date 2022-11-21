@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack\BlackJack.csproj", "{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
