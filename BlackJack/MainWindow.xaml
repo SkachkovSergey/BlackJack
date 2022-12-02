@@ -3,30 +3,80 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BlackJack"
+        xmlns:local="clr-namespace:BlackJack" xmlns:comm="clr-namespace:Common;assembly=Common"
         mc:Ignorable="d"
-        Title="BlackJack" Height="450" Width="800">
-    
-        <Grid Background="Green">
-            <DockPanel  HorizontalAlignment="Center">
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-                    <Label FontSize="36">Player</Label>
-                    <ListBox x:Name="LstSpeler" Width="200" Height="250" Background="darkred" FontSize="16"></ListBox>
-                    <Label x:Name="TxtPlayerResult" HorizontalAlignment="Center" Width="100" FontSize="36" FontWeight="Bold" Height="60"></Label>
-                </StackPanel>
-                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 30" >
-                    <Button x:Name="BtnDeal" Width="250" Height="50" Margin="10 20" FontWeight="Bold" FontSize="20" Click="BtnDeal_Click">Deel</Button>
-                    <Button x:Name="BtnHit"  Width="250" Height="50" Margin="10 20" FontWeight="Bold" FontSize="20">Hit</Button>
-                    <Button x:Name="BtnStand"  Width="250" Height="50" Margin="10 20" FontWeight="Bold" FontSize="20">Stand</Button>
-                    <Label x:Name="TxtUitvoer" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 50" Height="35" Foreground="ForestGreen" FontSize="18" FontStyle="Italic"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                    <Label FontSize="36">Bank</Label>
-                    <ListBox x:Name="LstBank" Width="200" Height="250" Background="DarkRed" FontSize="16"></ListBox>
-                    <Label x:Name="TxtBankResult" FontSize="36" FontWeight="Bold" Width="100" Height="60"></Label>
-                </StackPanel>
+        Title="BlackJack" Height="500" Width="800"
+        FontWeight="Bold" FontSize="20" >
 
-            </DockPanel>
-        </Grid>
-    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type comm:Card}">
+            <TextBlock>
+                <Run>
+                    <Run.Style>
+                        <Style TargetType="Run">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Spades}">
+                                    <Setter Property="Text" Value="♠"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Clubs}">
+                                    <Setter Property="Text" Value="♣"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Diamonds}">
+                                    <Setter Property="Text" Value="♦"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Hearts}">
+                                    <Setter Property="Text" Value="♥"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Run.Style>
+                </Run>
+                <Run Text="{Binding Rank, Mode=OneWay}"/>
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Spades}">
+                                <Setter Property="Foreground" Value="Black"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Clubs}">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Diamonds}">
+                                <Setter Property="Foreground" Value="Yellow"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Suit}" Value="{x:Static comm:CardSuit.Hearts}">
+                                <Setter Property="Foreground" Value="Coral"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </DataTemplate>
+    </Window.Resources>
+
+    <UniformGrid  Background="Green" Columns="3">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="36">Player</TextBlock>
+            <ListBox x:Name="lBoxPlyerCards" Width="200" Height="250" Background="darkred" FontSize="16"></ListBox>
+            <!--<Label x:Name="TxtPlayerResult" HorizontalAlignment="Center" Width="100" FontSize="36" FontWeight="Bold" Height="60"></Label>-->
+            <TextBlock x:Name="tBlockPlayerPoints" HorizontalAlignment="Center" Width="100" FontSize="36" FontWeight="Bold" Height="60"/>
+            <Button Content="Сдать игроку" Click="OnDealToPlayer"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 30" >
+            <Button x:Name="BtnDeal" Width="250" Height="50" Margin="10 20" Click="BtnDeal_Click">Deel</Button>
+            <Button x:Name="BtnHit"  Width="250" Height="50" Margin="10 20">Hit</Button>
+            <Button x:Name="BtnStand"  Width="250" Height="50" Margin="10 20">Stand</Button>
+            <Label x:Name="TxtUitvoer" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Height="35" Foreground="ForestGreen" FontSize="18" FontStyle="Italic"/>
+            <Separator Height="10"/>
+            <Button Content="Заново" Click="OnReset"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <Label FontSize="36">Bank</Label>
+            <ListBox x:Name="lBoxPlyerBank" Width="200" Height="250" Background="DarkRed" FontSize="16"></ListBox>
+            <TextBlock x:Name="tBlockBankPoints" FontSize="36" FontWeight="Bold" Width="100" Height="60"></TextBlock>
+            <Button Content="Сдать банку" Click="OnDealToBank"/>
+        </StackPanel>
+
+    </UniformGrid>
+
 </Window>

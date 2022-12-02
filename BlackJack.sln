@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack\BlackJack.csproj", "{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack\BlackJack.csproj", "{2A17E1DA-66F9-4442-8D3A-8D818A4FEF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C8EBD59-11AD-4F46-B1F3-BDA7B7BCE770}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A34AEF0B-C56E-40FE-9997-CF9A82480A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDD19294-4EAC-4CFE-B5D0-969BE52AFE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A17E1DA-66F9-4442-8D3A-8D818A4FEF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A17E1DA-66F9-4442-8D3A-8D818A4FEF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A17E1DA-66F9-4442-8D3A-8D818A4FEF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A17E1DA-66F9-4442-8D3A-8D818A4FEF06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
